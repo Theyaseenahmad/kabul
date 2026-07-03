@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-h: 88px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #3d1210;
+  color: #f5ead9;
+}
+
+::selection {
+  background: #d4a24c;
+  color: #2a0d0c;
+}
+
+/* Signature repeating lattice motif — nod to Afghan textile geometry.
+   Used sparingly as section dividers, never as a full background. */
+.lattice-divider {
+  height: 22px;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      transparent 8px,
+      rgba(212, 162, 76, 0.35) 8px,
+      rgba(212, 162, 76, 0.35) 9px,
+      transparent 9px,
+      transparent 17px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      transparent 8px,
+      rgba(212, 162, 76, 0.35) 8px,
+      rgba(212, 162, 76, 0.35) 9px,
+      transparent 9px,
+      transparent 17px
+    );
+  background-size: 24px 24px;
+  opacity: 0.6;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(180deg, #f1dda8 0%, #d4a24c 55%, #93672e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #e8c275;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
